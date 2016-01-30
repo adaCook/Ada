@@ -44,4 +44,10 @@
         android:layout_height="wrap_content"
         android:text="@string/bmi_btn"
         android:onClick="calcBMI" />
+    <Button
+        android:id="@+id/about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="aboutBMI"
+        android:text="@string/about_button" />
 </LinearLayout>
