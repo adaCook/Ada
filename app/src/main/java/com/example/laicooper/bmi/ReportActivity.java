@@ -8,9 +8,11 @@ public class ReportActivity extends AppCompatActivity { /** Called when the acti
 public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState); setContentView(R.layout.activity_report);
     Bundle bundle = getIntent().getExtras();
-    double height = Double.parseDouble(bundle.getString("height"))/100;
-    double weight = Double.parseDouble(bundle.getString("weight"));
-    double bmi = weight / (height * height);
+    int feet = bundle.getInt("feet");
+    int inches=bundle.getInt("inches");
+    double weight = Double.parseDouble(bundle.getString("weight"))*0.45359;
+    double height=(feet * 12 + inches)*0.0254;
+    double bmi=weight/(height*height);
     DecimalFormat nf = new DecimalFormat("0.00");
     TextView result = (TextView) findViewById(R.id.report_result);
     result.setText(getString(R.string.bmi_result)+ " " + nf.format(bmi));
